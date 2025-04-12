@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Całka oznaczona</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-container">
+    <aside class="left-panel">
+      <h2>Jak wprowadzać dane:</h2>
+      <ul>
+        <li><strong>sin(x)</strong> — sinus z x</li>
+        <li><strong>cos(x)</strong> — cosinus z x</li>
+        <li><strong>x^2</strong> — x do kwadratu</li>
+        <li><strong>exp(x)</strong> — e do potęgi x</li>
+        <li><strong>log(x)</strong> — logarytm naturalny</li>
+        <li><strong>sqrt(x)</strong> — pierwiastek z x</li>
+      </ul>
+      <p>Przykład: <strong>sin(x) + x^2</strong></p>
+    </aside>
+
+    <div class="content">
+      <h1>Obliczanie całki oznaczonej</h1>
+
+      <form id="integralForm">
+        <label>f(x): <input type="text" id="functionInput" value="sin(x)"></label>
+        <label>a: <input type="number" id="aInput" value="0"></label>
+        <label>b: <input type="number" id="bInput" value="3.1416"></label>
+        <label>
+          Metoda:
+          <select id="methodSelect">
+            <option value="trapezy">Numeryczna</option>
+            <option value="symboliczna">Symboliczna</option>
+          </select>
+        </label>
+        <button type="button" onclick="solveIntegral()">Oblicz</button>
+      </form>
+
+      <div id="solution"></div>
+    </div>
+
+    <aside class="right-panel">
+      <h2>Co to jest całka oznaczona?</h2>
+      <p>Całka oznaczona to suma nieskończenie wielu bardzo małych pól pod wykresem funkcji na przedziale od <strong>a</strong> do <strong>b</strong>.</p>
+      <p>Wyrażana wzorem:</p>
+      <p>\[ \int_{a}^{b} f(x)\,dx \]</p>
+      <p>Oblicza pole powierzchni między wykresem a osią X.</p>
+    </aside>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/algebrite@1.4.0/dist/algebrite.bundle-for-browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
